@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE728034-AFA7-4984-B1FC-898A62B388B0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Mirle.WebAPI.Test.Controllers</RootNamespace>
+    <AssemblyName>Mirle.WebAPI.Test.Controllers</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiList\CtrlBlockStatusQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlBlockStatusQuery.Designer.cs">
+      <DependentUpon>CtrlBlockStatusQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlBufferRollInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlBufferRollInfo.Designer.cs">
+      <DependentUpon>CtrlBufferRollInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlBufferStatusQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlBufferStatusQuery.Designer.cs">
+      <DependentUpon>CtrlBufferStatusQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlControlStatusQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlControlStatusQuery.Designer.cs">
+      <DependentUpon>CtrlControlStatusQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlCVReceiveNewBinCmd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlCVReceiveNewBinCmd.Designer.cs">
+      <DependentUpon>CtrlCVReceiveNewBinCmd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlHealthCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlHealthCheck.Designer.cs">
+      <DependentUpon>CtrlHealthCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlLotRetrieveTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlLotRetrieveTransfer.Designer.cs">
+      <DependentUpon>CtrlLotRetrieveTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlLotTransferCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlLotTransferCancel.Designer.cs">
+      <DependentUpon>CtrlLotTransferCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlNewCarrierToStage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlNewCarrierToStage.Designer.cs">
+      <DependentUpon>CtrlNewCarrierToStage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlPutawayTransferInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlPutawayTransferInfo.Designer.cs">
+      <DependentUpon>CtrlPutawayTransferInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlMoveTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlMoveTask.Designer.cs">
+      <DependentUpon>CtrlMoveTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlRackRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlRackRequest.Designer.cs">
+      <DependentUpon>CtrlRackRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlRackTurn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlRackTurn.Designer.cs">
+      <DependentUpon>CtrlRackTurn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlRemoteLocalRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlRemoteLocalRequest.Designer.cs">
+      <DependentUpon>CtrlRemoteLocalRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlRetrieveTransferInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlRetrieveTransferInfo.Designer.cs">
+      <DependentUpon>CtrlRetrieveTransferInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlTaskCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlTaskCancel.Designer.cs">
+      <DependentUpon>CtrlTaskCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlTransferCommandRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlTransferCommandRequest.Designer.cs">
+      <DependentUpon>CtrlTransferCommandRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApiList\CtrlBufferInitial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiList\CtrlBufferInitial.Designer.cs">
+      <DependentUpon>CtrlBufferInitial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControllersAPITest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllersAPITest.Designer.cs">
+      <DependentUpon>ControllersAPITest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ApiList\CtrlBlockStatusQuery.resx">
+      <DependentUpon>CtrlBlockStatusQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlBufferInitial.resx">
+      <DependentUpon>CtrlBufferInitial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlBufferRollInfo.resx">
+      <DependentUpon>CtrlBufferRollInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlBufferStatusQuery.resx">
+      <DependentUpon>CtrlBufferStatusQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlControlStatusQuery.resx">
+      <DependentUpon>CtrlControlStatusQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlCVReceiveNewBinCmd.resx">
+      <DependentUpon>CtrlCVReceiveNewBinCmd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlHealthCheck.resx">
+      <DependentUpon>CtrlHealthCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlLotRetrieveTransfer.resx">
+      <DependentUpon>CtrlLotRetrieveTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlLotTransferCancel.resx">
+      <DependentUpon>CtrlLotTransferCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlNewCarrierToStage.resx">
+      <DependentUpon>CtrlNewCarrierToStage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlPutawayTransferInfo.resx">
+      <DependentUpon>CtrlPutawayTransferInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlMoveTask.resx">
+      <DependentUpon>CtrlMoveTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlRackRequest.resx">
+      <DependentUpon>CtrlRackRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlRackTurn.resx">
+      <DependentUpon>CtrlRackTurn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlRemoteLocalRequest.resx">
+      <DependentUpon>CtrlRemoteLocalRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlRetrieveTransferInfo.resx">
+      <DependentUpon>CtrlRetrieveTransferInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlTaskCancel.resx">
+      <DependentUpon>CtrlTaskCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiList\CtrlTransferCommandRequest.resx">
+      <DependentUpon>CtrlTransferCommandRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllersAPITest.resx">
+      <DependentUpon>ControllersAPITest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mirle.DB.Object\Mirle.DB.Object.csproj">
+      <Project>{25dda85b-35be-429d-81b4-025731c0e826}</Project>
+      <Name>Mirle.DB.Object</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.Def.U2NMMA30\Mirle.Def.U2NMMA30.csproj">
+      <Project>{e6f732fe-3905-49a7-b2cf-b4fa79c2dc5d}</Project>
+      <Name>Mirle.Def.U2NMMA30</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.Def\Mirle.Def_2.csproj">
+      <Project>{906da4ee-6b8d-40c7-bd49-a410feb1d2c8}</Project>
+      <Name>Mirle.Def_2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.Structure\Mirle.Structure.csproj">
+      <Project>{cc7b0aac-3935-44cf-b363-55c0445358d0}</Project>
+      <Name>Mirle.Structure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.WebAPI.Event.U2NMMA30\Mirle.WebAPI.Event.csproj">
+      <Project>{2e09050b-3bb2-482a-b27b-cf23db03e342}</Project>
+      <Name>Mirle.WebAPI.Event</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.WebAPI.U2NMMA30\Mirle.WebAPI.csproj">
+      <Project>{646741d4-de4c-48ef-9b90-1785bd22cefd}</Project>
+      <Name>Mirle.WebAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E09050B-3BB2-482A-B27B-CF23DB03E342}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mirle.WebAPI.Event.U2NMMA30</RootNamespace>
+    <AssemblyName>Mirle.WebAPI.Event.U2NMMA30</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiEventController.cs" />
+    <Compile Include="clsWriLog.cs" />
+    <Compile Include="ModelsForControllers\LocationDisableRequestInfo.cs" />
+    <Compile Include="ModelsForControllers\ForkStatusReportInfo.cs" />
+    <Compile Include="ModelsForControllers\ForkStatusList.cs" />
+    <Compile Include="ModelsForControllers\CmdDoubleStorageInfo.cs" />
+    <Compile Include="ModelsForControllers\CmdDestinationCheckInfo.cs" />
+    <Compile Include="ModelsForControllers\BlockStatusInfo.cs" />
+    <Compile Include="ModelsForControllers\BlockList.cs" />
+    <Compile Include="ModelsForControllers\BinEmptyLeaveInfo.cs" />
+    <Compile Include="ModelsForControllers\BCRCheckInfo.cs" />
+    <Compile Include="ModelsForControllers\AlarmInfo.cs" />
+    <Compile Include="ModelsForControllers\AGVPosReportInfo.cs" />
+    <Compile Include="ModelsForControllers\ControlChangeInfo.cs" />
+    <Compile Include="ModelsForControllers\ModChangeInfo.cs" />
+    <Compile Include="ModelsForControllers\WrongEquStockInInfo.cs" />
+    <Compile Include="ModelsForControllers\UnknownBinLeaveInfo.cs" />
+    <Compile Include="ModelsForControllers\TransferCommandDoneInfo.cs" />
+    <Compile Include="ModelsForControllers\StatusChangeInfo.cs" />
+    <Compile Include="ModelsForControllers\StageEmptyInfo.cs" />
+    <Compile Include="ModelsForControllers\ReelIdInfo.cs" />
+    <Compile Include="ModelsForControllers\RackIdInfo.cs" />
+    <Compile Include="ModelsForControllers\RackInfo.cs" />
+    <Compile Include="ModelsForWES\LotList.cs" />
+    <Compile Include="ModelsForWES\LotTransferCancelInfo.cs" />
+    <Compile Include="ModelsForWES\LotShelfTransferInfo.cs" />
+    <Compile Include="ModelsForWES\LotRetrieveTransferInfo.cs" />
+    <Compile Include="ModelsForWES\LotPutawayTransferInfo.cs" />
+    <Compile Include="ModelsForWES\CarrierShelfTransferInfo.cs" />
+    <Compile Include="ModelsForWES\CarrierRetrieveTransferInfo.cs" />
+    <Compile Include="ModelsForWES\CarrierPutawayTransferInfo.cs" />
+    <Compile Include="ModelsForWES\CarrierTransferCancelInfo.cs" />
+    <Compile Include="ModelsForWES\CarrierTransferInfo.cs" />
+    <Compile Include="ModelsForWES\BaseInfo.cs" />
+    <Compile Include="Models\CraneStsInfo.cs" />
+    <Compile Include="Models\CvStsInfo.cs" />
+    <Compile Include="Models\DowntimeStsInfo.cs" />
+    <Compile Include="Models\EqpDowntimeQueryInfo.cs" />
+    <Compile Include="Models\CountListInfo.cs" />
+    <Compile Include="Models\PortStsInfo.cs" />
+    <Compile Include="ModelsForControllers\PositionReportInfo.cs" />
+    <Compile Include="Models\PutawayTransferInfo.cs" />
+    <Compile Include="Models\RetrieveTransferInfo.cs" />
+    <Compile Include="Models\ReturnCode.cs" />
+    <Compile Include="Models\ReturnEqpDowntimeQueryInfo.cs" />
+    <Compile Include="Models\ReturnEqpOEEQueryInfo.cs" />
+    <Compile Include="Models\ReturnEqpStatusInfo.cs" />
+    <Compile Include="Models\ReturnEqpUtilizationQueryInfo.cs" />
+    <Compile Include="Models\ShelfTransferInfo.cs" />
+    <Compile Include="Models\EqpUtilizationQueryInfo.cs" />
+    <Compile Include="Models\EQPOEEListInfo.cs" />
+    <Compile Include="Models\EqpOEEQueryInfo.cs" />
+    <Compile Include="Models\UtilizationStsInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ModelsForControllers\CommandCompleteInfo.cs" />
+    <Compile Include="ReplyForControllers\WrongEquStockInRequestReply.cs" />
+    <Compile Include="ReplyForControllers\ReelStockInReply.cs" />
+    <Compile Include="ReplyForControllers\CmdDoubleStorageReply.cs" />
+    <Compile Include="ReplyForControllers\CmdDestinationCheckReply.cs" />
+    <Compile Include="ReplyForControllers\CarrierReply.cs" />
+    <Compile Include="ReplyForWES\LotReply.cs" />
+    <Compile Include="ReplyForWES\CarrierReply.cs" />
+    <Compile Include="ReplyForWES\ReplyCode.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="UnityResolver.cs" />
+    <Compile Include="WebApiHost.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mirle.DB.Fun\Mirle.DB.Fun.csproj">
+      <Project>{c40166b0-0f5d-4535-94a7-699764a59a83}</Project>
+      <Name>Mirle.DB.Fun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.DB.Object\Mirle.DB.Object.csproj">
+      <Project>{25dda85b-35be-429d-81b4-025731c0e826}</Project>
+      <Name>Mirle.DB.Object</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.DB.Proc\Mirle.DB.Proc.csproj">
+      <Project>{60c72719-d780-4bc8-9198-fc21c9754918}</Project>
+      <Name>Mirle.DB.Proc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.Def.U2NMMA30\Mirle.Def.U2NMMA30.csproj">
+      <Project>{e6f732fe-3905-49a7-b2cf-b4fa79c2dc5d}</Project>
+      <Name>Mirle.Def.U2NMMA30</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.Def\Mirle.Def_2.csproj">
+      <Project>{906da4ee-6b8d-40c7-bd49-a410feb1d2c8}</Project>
+      <Name>Mirle.Def_2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.Middle\Mirle.Middle.csproj">
+      <Project>{312ed336-0211-4e88-9f3f-6b15a133f864}</Project>
+      <Name>Mirle.Middle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.Structure\Mirle.Structure.csproj">
+      <Project>{cc7b0aac-3935-44cf-b363-55c0445358d0}</Project>
+      <Name>Mirle.Structure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.WebAPI.U2NMMA30\Mirle.WebAPI.csproj">
+      <Project>{646741d4-de4c-48ef-9b90-1785bd22cefd}</Project>
+      <Name>Mirle.WebAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.WriLog\Mirle.WriLog_2.csproj">
+      <Project>{fcb3bfde-2247-4aa4-a652-f87c081b63fc}</Project>
+      <Name>Mirle.WriLog_2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client">
+      <Version>5.2.7</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core">
+      <Version>5.2.7</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Owin">
+      <Version>5.2.7</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Owin">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Owin.Host.HttpListener">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Owin.Hosting">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Mirle">
+      <Version>2.1.5</Version>
+    </PackageReference>
+    <PackageReference Include="Mirle.MPLC.MCProtocol">
+      <Version>1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Mirle.MPLC.MXComponent">
+      <Version>1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Owin">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.4</Version>
+    </PackageReference>
+    <PackageReference Include="Unity">
+      <Version>5.11.10</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3D01421-0E64-4B0C-B8BC-B6B71363516F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Mirle.WebAPI.Test.WES</RootNamespace>
+    <AssemblyName>Mirle.WebAPI.Test.WES</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="testingList\WESRemoveRackDown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESRemoveRackDown.Designer.cs">
+      <DependentUpon>WESRemoveRackDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESRemoveRackShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESRemoveRackShow.Designer.cs">
+      <DependentUpon>WESRemoveRackShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESEQPStatusUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESEQPStatusUpdate.Designer.cs">
+      <DependentUpon>WESEQPStatusUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESEmptyESDCarrierLoadRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESEmptyESDCarrierLoadRequest.Designer.cs">
+      <DependentUpon>WESEmptyESDCarrierLoadRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESEmptyESDCarrierUnload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESEmptyESDCarrierUnload.Designer.cs">
+      <DependentUpon>WESEmptyESDCarrierUnload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESLotRenewRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESLotRenewRequest.Designer.cs">
+      <DependentUpon>WESLotRenewRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESMagazineLoadRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESMagazineLoadRequest.Designer.cs">
+      <DependentUpon>WESMagazineLoadRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESEmptyMagazineLoadRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESEmptyMagazineLoadRequest.Designer.cs">
+      <DependentUpon>WESEmptyMagazineLoadRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESEmptyMagazineUnload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESEmptyMagazineUnload.Designer.cs">
+      <DependentUpon>WESEmptyMagazineUnload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESCarrierRetrieveComplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESCarrierRetrieveComplete.Designer.cs">
+      <DependentUpon>WESCarrierRetrieveComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESLotRetrieveComplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESLotRetrieveComplete.Designer.cs">
+      <DependentUpon>WESLotRetrieveComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESPortStatusUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESPortStatusUpdate.Designer.cs">
+      <DependentUpon>WESPortStatusUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESEmptyCarrierUnload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESEmptyCarrierUnload.Designer.cs">
+      <DependentUpon>WESEmptyCarrierUnload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESWCSCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESWCSCancel.Designer.cs">
+      <DependentUpon>WESWCSCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESEmptyShelfQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESEmptyShelfQuery.Designer.cs">
+      <DependentUpon>WESEmptyShelfQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESLotShelfComplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESLotShelfComplete.Designer.cs">
+      <DependentUpon>WESLotShelfComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESCarrierShelfComplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESCarrierShelfComplete.Designer.cs">
+      <DependentUpon>WESCarrierShelfComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESLotShelfRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESLotShelfRequest.Designer.cs">
+      <DependentUpon>WESLotShelfRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESCarrierShelfRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESCarrierShelfRequest.Designer.cs">
+      <DependentUpon>WESCarrierShelfRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESCarrierShelfReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESCarrierShelfReport.Designer.cs">
+      <DependentUpon>WESCarrierShelfReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESLotShelfReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESLotShelfReport.Designer.cs">
+      <DependentUpon>WESLotShelfReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESLotPutawayComplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESLotPutawayComplete.Designer.cs">
+      <DependentUpon>WESLotPutawayComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESLotPutawayCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESLotPutawayCheck.Designer.cs">
+      <DependentUpon>WESLotPutawayCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESCarrierPutawayComplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESCarrierPutawayComplete.Designer.cs">
+      <DependentUpon>WESCarrierPutawayComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESCarrierPutawayCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESCarrierPutawayCheck.Designer.cs">
+      <DependentUpon>WESCarrierPutawayCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESCarrierTransferComplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESCarrierTransferComplete.Designer.cs">
+      <DependentUpon>WESCarrierTransferComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESCarrierReturnNext.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESCarrierReturnNext.Designer.cs">
+      <DependentUpon>WESCarrierReturnNext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESNGPositionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESNGPositionReport.Designer.cs">
+      <DependentUpon>WESNGPositionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESLotPositionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESLotPositionReport.Designer.cs">
+      <DependentUpon>WESLotPositionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testingList\WESPostitionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingList\WESPostitionReport.Designer.cs">
+      <DependentUpon>WESPostitionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WESAPITest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WESAPITest.Designer.cs">
+      <DependentUpon>WESAPITest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="testingList\WESCarrierPutawayCheck.resx">
+      <DependentUpon>WESCarrierPutawayCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESCarrierPutawayComplete.resx">
+      <DependentUpon>WESCarrierPutawayComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESCarrierRetrieveComplete.resx">
+      <DependentUpon>WESCarrierRetrieveComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESCarrierReturnNext.resx">
+      <DependentUpon>WESCarrierReturnNext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESCarrierShelfComplete.resx">
+      <DependentUpon>WESCarrierShelfComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESCarrierShelfReport.resx">
+      <DependentUpon>WESCarrierShelfReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESCarrierShelfRequest.resx">
+      <DependentUpon>WESCarrierShelfRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESCarrierTransferComplete.resx">
+      <DependentUpon>WESCarrierTransferComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESEmptyCarrierUnload.resx">
+      <DependentUpon>WESEmptyCarrierUnload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESEmptyESDCarrierLoadRequest.resx">
+      <DependentUpon>WESEmptyESDCarrierLoadRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESEmptyESDCarrierUnload.resx">
+      <DependentUpon>WESEmptyESDCarrierUnload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESEmptyMagazineLoadRequest.resx">
+      <DependentUpon>WESEmptyMagazineLoadRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESEmptyMagazineUnload.resx">
+      <DependentUpon>WESEmptyMagazineUnload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESEmptyShelfQuery.resx">
+      <DependentUpon>WESEmptyShelfQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESEQPStatusUpdate.resx">
+      <DependentUpon>WESEQPStatusUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESLotPositionReport.resx">
+      <DependentUpon>WESLotPositionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESLotPutawayCheck.resx">
+      <DependentUpon>WESLotPutawayCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESLotPutawayComplete.resx">
+      <DependentUpon>WESLotPutawayComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESLotRenewRequest.resx">
+      <DependentUpon>WESLotRenewRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESLotRetrieveComplete.resx">
+      <DependentUpon>WESLotRetrieveComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESLotShelfComplete.resx">
+      <DependentUpon>WESLotShelfComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESLotShelfRequest.resx">
+      <DependentUpon>WESLotShelfRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESLotShelfReport.resx">
+      <DependentUpon>WESLotShelfReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESMagazineLoadRequest.resx">
+      <DependentUpon>WESMagazineLoadRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESNGPositionReport.resx">
+      <DependentUpon>WESNGPositionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESPortStatusUpdate.resx">
+      <DependentUpon>WESPortStatusUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESPostitionReport.resx">
+      <DependentUpon>WESPostitionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESRemoveRackDown.resx">
+      <DependentUpon>WESRemoveRackDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESRemoveRackShow.resx">
+      <DependentUpon>WESRemoveRackShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingList\WESWCSCancel.resx">
+      <DependentUpon>WESWCSCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WESAPITest.resx">
+      <DependentUpon>WESAPITest.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mirle.DB.ClearCmd.Proc\Mirle.DB.ClearCmd.Proc.csproj">
+      <Project>{31deb747-36ca-4a92-8df1-89eee47a0fa4}</Project>
+      <Name>Mirle.DB.ClearCmd.Proc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.DB.Fun\Mirle.DB.Fun.csproj">
+      <Project>{c40166b0-0f5d-4535-94a7-699764a59a83}</Project>
+      <Name>Mirle.DB.Fun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.DB.Object\Mirle.DB.Object.csproj">
+      <Project>{25dda85b-35be-429d-81b4-025731c0e826}</Project>
+      <Name>Mirle.DB.Object</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.DB.Proc\Mirle.DB.Proc.csproj">
+      <Project>{60c72719-d780-4bc8-9198-fc21c9754918}</Project>
+      <Name>Mirle.DB.Proc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.DB.WMS.Fun\Mirle.DB.WMS.Fun.csproj">
+      <Project>{ad4818ff-fefa-48f2-a7fe-f1007d3cfbbc}</Project>
+      <Name>Mirle.DB.WMS.Fun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.DB.WMS.Proc\Mirle.DB.WMS.Proc.csproj">
+      <Project>{553bd8cf-f4c1-4b39-97ab-42cc2f7c8187}</Project>
+      <Name>Mirle.DB.WMS.Proc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.Def\Mirle.Def_2.csproj">
+      <Project>{906da4ee-6b8d-40c7-bd49-a410feb1d2c8}</Project>
+      <Name>Mirle.Def_2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.Middle\Mirle.Middle.csproj">
+      <Project>{312ed336-0211-4e88-9f3f-6b15a133f864}</Project>
+      <Name>Mirle.Middle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.WebAPI.Event.U2NMMA30\Mirle.WebAPI.Event.csproj">
+      <Project>{2e09050b-3bb2-482a-b27b-cf23db03e342}</Project>
+      <Name>Mirle.WebAPI.Event</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mirle.WebAPI.U2NMMA30\Mirle.WebAPI.csproj">
+      <Project>{646741d4-de4c-48ef-9b90-1785bd22cefd}</Project>
+      <Name>Mirle.WebAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

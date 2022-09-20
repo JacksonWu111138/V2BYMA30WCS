@@ -1,0 +1,400 @@
+﻿Drop Table MiddleCmd;
+Drop Table MiddleCmd_His;
+Drop Table UnitModeDef;
+Drop Table UnitStsLog;
+DROP TABLE DeviceDef;
+DROP TABLE EQ_Alarm;
+DROP TABLE PortDef;
+DROP TABLE SHELFDef;
+DROP TABLE Routdef;
+DROP TABLE SnoCtrlDef;
+DROP TABLE Task;
+DROP TABLE HisTask;
+DROP TABLE SNO_CTL;
+DROP TABLE SNO_MAX
+DROP TABLE CMD_MST;
+Drop Table CMD_MST_His;
+Drop Table Teach_Loc;
+DROP Table AlarmCVCLog;
+DROP Table LotRetrieveNG;
+Drop Table AlarmCVCDef;
+
+CREATE TABLE AlarmCVCDef
+(
+AlarmCode VARCHAR(10) NOT NULL,
+AlarmLevel VARCHAR(1) DEFAULT ' ',
+AlarmType VARCHAR(3) NOT NULL,
+AlarmDesc VARCHAR(250) DEFAULT ' ',
+AlarmDesc_EN VARCHAR(250) DEFAULT ' ',
+PRIMARY KEY(AlarmCode, AlarmType)
+);
+
+Create Table LotRetrieveNG
+(
+CmdSno Varchar(5) NOT NULL,
+JobID NVarchar(MAX) NOT NULL,
+lotId NVarchar(350) NOT NULL,
+CmdSts VARCHAR(1) NOT NULL,
+STRDT VARCHAR(20) NOT NULL,
+CLRDT VARCHAR(20) DEFAULT ' ',
+TOTALSECS INT DEFAULT 0,
+PRIMARY KEY(CmdSno,lotId,STRDT)
+);
+
+Create Table AlarmCVCLog
+(
+CmdSno VARCHAR(5) NOT NULL,
+EquNo NVARCHAR(2) NOT NULL,
+BufferID NVARCHAR(64),
+EquMode VARCHAR(1) NOT NULL DEFAULT ' ',
+AlarmCode VARCHAR(10) NOT NULL,
+AlarmDef NVARCHAR(MAX) NOT NULL DEFAULT ' ',
+AlarmSts VARCHAR(1) NOT NULL,
+STRDT VARCHAR(20) NOT NULL,
+CLRDT VARCHAR(20) DEFAULT ' ',
+TOTALSECS INT DEFAULT 0,
+PRIMARY KEY(CmdSno,STRDT)
+);
+
+Create Table MiddleCmd
+(
+DeviceID VARCHAR(64) NOT NULL,
+CommandID VARCHAR(64) NOT NULL,
+TaskNo VARCHAR(15) NOT NULL,
+Priority NUMERIC(4, 0) DEFAULT 50,
+CSTID VARCHAR(64) DEFAULT '',
+CmdSts			Varchar(1) NOT NULL,		
+CmdMode			Varchar(1)  NOT NULL,
+Source VARCHAR(64) DEFAULT 0,
+Destination VARCHAR(64) DEFAULT 0,
+Path NUMERIC(2, 0) DEFAULT 0,
+CrtDate			Varchar(20) Not Null     Default '',	
+ExpDate			Varchar(20) Not Null     Default '',	
+EndDate			Varchar(20) Not Null     Default '',
+Remark          NVarchar(MAX) Not Null  Default '',
+BatchID         NVarchar(MAX) NOT NULL  Default '',
+rackLocation  NVarchar(MAX) NOT NULL  Default '',
+largest          NVarchar(MAX) NOT NULL  Default 'N',
+carrierType  NVarchar(MAX) NOT NULL  Default '',
+CompleteCode VARCHAR(2) DEFAULT'',
+Iotype			Varchar(2)  NOT NULL     Default '',
+lotSize          Varchar(3)  Not Null        Default '',
+PRIMARY KEY(DeviceID,CommandID,TaskNo)
+);
+
+Create Table MiddleCmd_His
+(
+HisDT varchar(25) NOT NULL Default CONVERT([VARCHAR], GETDATE(), (121)),
+DeviceID VARCHAR(64) NOT NULL,
+CommandID VARCHAR(64) NOT NULL,
+TaskNo VARCHAR(15) NOT NULL,
+Priority NUMERIC(4, 0) DEFAULT 50,
+CSTID VARCHAR(64) DEFAULT '',
+CmdSts			Varchar(1) NOT NULL,		
+CmdMode			Varchar(1)  NOT NULL,
+Source VARCHAR(64) DEFAULT 0,
+Destination VARCHAR(64) DEFAULT 0,
+Path NUMERIC(2, 0) DEFAULT 0,
+CrtDate			Varchar(20) Not Null     Default '',	
+ExpDate			Varchar(20) Not Null     Default '',	
+EndDate			Varchar(20) Not Null     Default '',
+Remark          NVarchar(MAX) Not Null  Default '',
+BatchID         NVarchar(MAX) NOT NULL  Default '',
+rackLocation  NVarchar(MAX) NOT NULL  Default '',
+largest          NVarchar(MAX) NOT NULL  Default 'N',
+carrierType  NVarchar(MAX) NOT NULL  Default '',
+CompleteCode VARCHAR(2) DEFAULT'',
+Iotype			Varchar(2)  NOT NULL     Default '',
+lotSize          Varchar(3)  Not Null        Default ''
+);
+
+Create Table UnitModeDef
+(
+[StockerID] [varchar](64) NOT NULL,
+[In_enable] [varchar](1) NOT NULL Default 'Y',
+PRIMARY KEY(StockerID)
+);
+
+Create Table UnitStsLog
+(
+[StockerID] [varchar](64) NOT NULL,
+[UnitID] [varchar](64) NOT NULL,
+[Status] [Numeric](2) NOT NULL,
+[STRDT] [varchar](25) NOT NULL,
+[ENDDT] [varchar](25),
+[TotalSecs] [Numeric](8, 2) Not Null Default 0,
+PRIMARY KEY(StockerID, UnitID, STRDT)
+);
+
+CREATE TABLE DeviceDef
+(
+DeviceID VARCHAR(64) NOT NULL,
+DeviceType NUMERIC(2,0) NOT NULL,
+DeviceTypeIndex NUMERIC(2,0) NOT NULL,
+IPAddress VARCHAR(15),
+TrnDT VARCHAR(25) NOT NULL,
+PRIMARY KEY(DeviceID)
+);
+
+CREATE TABLE EQ_Alarm
+(
+[Buffer] [varchar](20) NOT NULL,
+[Alarm] [nvarchar](250) NOT NULL,
+[AlarmSts] [varchar](1) NOT NULL,
+[STRDT] [varchar](25) NOT NULL,
+[CLRDT] [varchar](25) NULL,
+[TotalSecs] [int] NULL,
+PRIMARY KEY(Buffer,Alarm,STRDT)
+);
+
+CREATE TABLE PortDef
+(
+DeviceID VARCHAR(64) NOT NULL,
+HostPortID VARCHAR(64) NOT NULL,
+PortType NUMERIC(2, 0) NOT NULL,
+PortTypeIndex NUMERIC(2, 0) NOT NULL,
+PLCPortID NUMERIC(3, 0) NOT NULL,
+AlarmType NUMERIC(2, 0) NOT NULL DEFAULT 0,
+TimeoutAutoUD NUMERIC(6, 0) NOT NULL DEFAULT 0,
+AutoUDDeviceID VARCHAR(64) DEFAULT ' ',
+AutoUDLoc VARCHAR(64) DEFAULT ' ',
+AlternateDeviceID VARCHAR(64) DEFAULT ' ',
+AlternateLoc VARCHAR(64) DEFAULT ' ',
+Remark VARCHAR(100) DEFAULT ' ',
+TrnDT VARCHAR(25) NOT NULL,
+Direction NUMERIC(2, 0) NOT NULL DEFAULT 0,
+PRIMARY KEY(DeviceID,HostPortID)
+);
+
+CREATE TABLE SHELFDef
+(
+DeviceID VARCHAR(64) NOT NULL,
+ShelfID VARCHAR(64) NOT NULL,
+TrnDT VARCHAR(25) NOT NULL,
+PRIMARY KEY(DeviceID,ShelfID)
+);
+
+CREATE TABLE Routdef
+(
+DeviceID VARCHAR(64) NOT NULL,
+HostPortID VARCHAR(64) NOT NULL,
+NextDeviceID VARCHAR(64) NOT NULL,
+NextHostPortID VARCHAR(64) NOT NULL,
+TrnDT VARCHAR(25) NOT NULL,
+PRIMARY KEY(DeviceID,HostPortID,NextDeviceID,NextHostPortID)
+);
+
+CREATE TABLE SnoCtrlDef
+(
+SnoType Varchar(20) Not NULL,
+Sno Numeric(5, 0),
+MaxSno Numeric (5, 0),
+TrnDT Varchar (25) Not NULL,
+PRIMARY KEY(SnoType)
+);
+
+CREATE TABLE Task
+(
+DeviceID VARCHAR(64) NOT NULL,
+CommandID VARCHAR(64) NOT NULL,
+TaskNo VARCHAR(15) NOT NULL,
+CraneNo NUMERIC(1, 0) DEFAULT 1,
+ForkNo NUMERIC(1, 0) DEFAULT 1,
+Priority NUMERIC(4, 0) DEFAULT 50,
+CSTID VARCHAR(64) DEFAULT '',
+CSTType VARCHAR(2) DEFAULT '',
+LotID VARCHAR(64) DEFAULT'',
+CMDInfo VARCHAR(64) DEFAULT'',
+UserID VARCHAR(20) DEFAULT'',
+TaskState NUMERIC(2, 0) Not Null DEFAULT 0,
+CompleteCode VARCHAR(2) DEFAULT'',
+CompleteIndex VARCHAR(5) DEFAULT'',
+ReNewFlag VARCHAR(1),
+FinishLocation VARCHAR(7) DEFAULT'',
+CMDState NUMERIC(2, 0) DEFAULT 0,
+TransferMode NUMERIC(2, 0) NOT NULL,
+TransferModeType VARCHAR(2) DEFAULT 00,
+Source VARCHAR(7) DEFAULT 0,
+SourceBay NUMERIC(3, 0) DEFAULT 0,
+Destination VARCHAR(7) DEFAULT 0,
+DestinationBay NUMERIC(3, 0) DEFAULT 0,
+NextDest NUMERIC(4, 0) DEFAULT 0,
+TravelAxisSpeed NUMERIC(3, 0) DEFAULT 0,
+LifterAxisSpeed NUMERIC(3, 0) DEFAULT 0,
+RotateAxisSpeed NUMERIC(3, 0) DEFAULT 0,
+ForkAxisSpeed NUMERIC(3, 0) DEFAULT 0,
+BCRReadFlag VARCHAR(1) DEFAULT 'N',
+BCRReadDT VARCHAR(25) DEFAULT'',
+BCRReplyCSTID VARCHAR(64) DEFAULT '',
+BCRReadStatus NUMERIC(1, 0) DEFAULT 9,
+QueueDT VARCHAR(25) NOT NULL Default CONVERT([VARCHAR], GETDATE(), (121)),
+InitialDT VARCHAR(25) DEFAULT'',
+WaitingDT VARCHAR(25) DEFAULT'',
+ActiveDT VARCHAR(25) DEFAULT'',
+C1StartDT VARCHAR(25) DEFAULT'',
+AtSourceDT VARCHAR(25) DEFAULT'',
+F1StartDT VARCHAR(25) DEFAULT'',
+CSTOnDT VARCHAR(25) DEFAULT'',
+C2StartDT VARCHAR(25) DEFAULT'',
+AtDestinationDT VARCHAR(25) DEFAULT'',
+F2StartDT VARCHAR(25) DEFAULT'',
+CSTTakeOffDT VARCHAR(25) DEFAULT'',
+FinishDT VARCHAR(25) DEFAULT'',
+T1 NUMERIC(5, 0) DEFAULT 0,
+T2 NUMERIC(5, 0) DEFAULT 0,
+T3 NUMERIC(5, 0) DEFAULT 0,
+T4 NUMERIC(5, 0) DEFAULT 0,
+TravelDistance NUMERIC(8, 0) DEFAULT 0,
+PRIMARY KEY(DeviceID,CommandID,TaskNo)
+);
+
+CREATE TABLE HisTask
+(
+HisDT varchar(25) NOT NULL Default CONVERT([VARCHAR], GETDATE(), (121)),
+DeviceID VARCHAR(64) NOT NULL,
+CommandID VARCHAR(64) NOT NULL,
+TaskNo VARCHAR(15) NOT NULL,
+CraneNo NUMERIC(1, 0) DEFAULT 1,
+ForkNo NUMERIC(1, 0) DEFAULT 1,
+Priority NUMERIC(4, 0) DEFAULT 50,
+CSTID VARCHAR(64) DEFAULT '',
+CSTType VARCHAR(2) DEFAULT '',
+LotID VARCHAR(64) DEFAULT'',
+CMDInfo VARCHAR(64) DEFAULT'',
+UserID VARCHAR(20) DEFAULT'',
+TaskState NUMERIC(2, 0) Not Null DEFAULT 0,
+CompleteCode VARCHAR(2) DEFAULT'',
+CompleteIndex VARCHAR(5) DEFAULT'',
+ReNewFlag VARCHAR(1),
+FinishLocation VARCHAR(7) DEFAULT'',
+CMDState NUMERIC(2, 0) DEFAULT 0,
+TransferMode NUMERIC(2, 0) NOT NULL,
+TransferModeType VARCHAR(2) DEFAULT 00,
+Source VARCHAR(7) DEFAULT 0,
+SourceBay NUMERIC(3, 0) DEFAULT 0,
+Destination VARCHAR(7) DEFAULT 0,
+DestinationBay NUMERIC(3, 0) DEFAULT 0,
+NextDest NUMERIC(4, 0) DEFAULT 0,
+TravelAxisSpeed NUMERIC(3, 0) DEFAULT 0,
+LifterAxisSpeed NUMERIC(3, 0) DEFAULT 0,
+RotateAxisSpeed NUMERIC(3, 0) DEFAULT 0,
+ForkAxisSpeed NUMERIC(3, 0) DEFAULT 0,
+BCRReadFlag VARCHAR(1) DEFAULT 'N',
+BCRReadDT VARCHAR(25) DEFAULT'',
+BCRReplyCSTID VARCHAR(64) DEFAULT '',
+BCRReadStatus NUMERIC(1, 0) DEFAULT 9,
+QueueDT VARCHAR(25) NOT NULL Default CONVERT([VARCHAR], GETDATE(), (121)),
+InitialDT VARCHAR(25) DEFAULT'',
+WaitingDT VARCHAR(25) DEFAULT'',
+ActiveDT VARCHAR(25) DEFAULT'',
+C1StartDT VARCHAR(25) DEFAULT'',
+AtSourceDT VARCHAR(25) DEFAULT'',
+F1StartDT VARCHAR(25) DEFAULT'',
+CSTOnDT VARCHAR(25) DEFAULT'',
+C2StartDT VARCHAR(25) DEFAULT'',
+AtDestinationDT VARCHAR(25) DEFAULT'',
+F2StartDT VARCHAR(25) DEFAULT'',
+CSTTakeOffDT VARCHAR(25) DEFAULT'',
+FinishDT VARCHAR(25) DEFAULT'',
+T1 NUMERIC(5, 0) DEFAULT 0,
+T2 NUMERIC(5, 0) DEFAULT 0,
+T3 NUMERIC(5, 0) DEFAULT 0,
+T4 NUMERIC(5, 0) DEFAULT 0,
+TravelDistance NUMERIC(8, 0) DEFAULT 0,
+PRIMARY KEY(DeviceID,CommandID,TaskNo)
+);
+
+CREATE TABLE SNO_CTL
+(
+TrnDate	Varchar(8) NOT NULL,
+SnoTyp	Varchar(8) NOT NULL,
+Sno		Numeric(8) NOT NULL Default 1,
+Primary Key(SnoTyp)
+);
+
+CREATE TABLE SNO_MAX
+(
+Sno_Type	Varchar (10)	Not Null,	
+Month_Flag	Varchar (1)		Default 'N',
+Init_Sno	Numeric(10)		Default 1,
+Max_Sno		Numeric(10),		
+Sno_Len		Numeric(2)		Default 5,
+Primary Key(Sno_Type)
+);
+
+CREATE TABLE CMD_MST
+(
+CmdSno			Varchar(5) NOT NULL,
+CmdSts			Varchar(1) NOT NULL,		
+PRT				Varchar(1) NOT NULL		Default '5',
+Cmd_Abnormal	Varchar(2) NOT NULL		Default 'NA',
+StnNo			NVarchar(MAX) NOT NULL  Default '',
+CmdMode			Varchar(1)  NOT NULL,
+Iotype			Varchar(2)  NOT NULL     Default '',
+Loc				Varchar(7)  NOT NULL     Default '',		
+NewLoc			Varchar(7)  Not Null     Default '',
+CrtDate			Varchar(20) Not Null     Default '',	
+ExpDate			Varchar(20) Not Null     Default '',	
+EndDate			Varchar(20) Not Null     Default '',
+UserID			Varchar(20),	
+BoxId			NVarchar(350) Not Null,
+EquNO			Varchar(2)  NOT NULL,		
+CurLoc			Varchar(60) Not Null     Default '',	
+CurDeviceID     Varchar(2)  Not Null     Default '',
+JobID           NVarchar(MAX) NOT NULL  Default '',
+BatchID         NVarchar(MAX) NOT NULL  Default '',
+ZoneID          NVarchar(MAX) NOT NULL  Default '',
+Remark          NVarchar(MAX) Not Null  Default '',
+NeedShelfToShelf Varchar(1)   Not Null  Default 'N',
+backupPortId    NVarchar(MAX) NOT NULL  Default '',
+ticketId        Varchar(MAX) Not Null default '',
+rackLocation  NVarchar(MAX) NOT NULL  Default '',
+largest          NVarchar(MAX) NOT NULL  Default 'N',
+carrierType  NVarchar(MAX) NOT NULL  Default '',
+lotSize          Varchar(3)  Not Null        Default '',
+Primary Key(CmdMode, BoxId)
+);
+
+CREATE TABLE CMD_MST_His
+(
+HisDT varchar(25) NOT NULL Default CONVERT([VARCHAR], GETDATE(), (121)),
+CmdSno			Varchar(5) NOT NULL,
+CmdSts			Varchar(1) NOT NULL,		
+PRT				Varchar(1) NOT NULL		Default '5',
+Cmd_Abnormal	Varchar(2) NOT NULL		Default 'NA',
+StnNo			NVarchar(MAX) NOT NULL  Default '',
+CmdMode			Varchar(1)  NOT NULL,
+Iotype			Varchar(2)  NOT NULL     Default '',
+Loc				Varchar(7)  NOT NULL     Default '',		
+NewLoc			Varchar(7)  Not Null     Default '',
+CrtDate			Varchar(20) Not Null     Default '',	
+ExpDate			Varchar(20) Not Null     Default '',	
+EndDate			Varchar(20) Not Null     Default '',
+UserID			Varchar(20),	
+BoxId			NVarchar(350) Not Null,
+EquNO			Varchar(2)  NOT NULL,		
+CurLoc			Varchar(60) Not Null     Default '',	
+CurDeviceID     Varchar(2)  Not Null     Default '',
+JobID           NVarchar(MAX) NOT NULL  Default '',
+BatchID         NVarchar(MAX) NOT NULL  Default '',
+ZoneID          NVarchar(MAX) NOT NULL  Default '',
+Remark          NVarchar(MAX) Not Null  Default '',
+NeedShelfToShelf Varchar(1)   Not Null  Default 'N',
+backupPortId    NVarchar(MAX) NOT NULL  Default '',
+ticketId        Varchar(MAX) Not Null default '',
+rackLocation  NVarchar(MAX) NOT NULL  Default '',
+largest          NVarchar(MAX) NOT NULL  Default 'N',
+carrierType  NVarchar(MAX) NOT NULL  Default '',
+lotSize          Varchar(3)  Not Null        Default ''
+);
+
+Create Table Teach_Loc
+(
+DeviceID VARCHAR(64)   NOT NULL,
+Loc		 Varchar(7)    NOT NULL,
+LocSts	 Varchar(1)    NOT NULL Default 'N',
+OldSts	 Varchar(1)    NOT NULL Default 'N',
+BoxId	 NVarchar(350) Not Null Default '',
+TrnDate  VARCHAR(25) NOT NULL Default CONVERT([VARCHAR], GETDATE(), (121)),
+Primary Key(DeviceID, Loc)
+);
